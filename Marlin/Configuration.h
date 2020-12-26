@@ -1025,7 +1025,9 @@
 #define PROBING_MARGIN 15
 
 // X and Y axis travel speed (mm/min) between probes
-#define XY_PROBE_SPEED (150*60)
+//#define XY_PROBE_SPEED (150*60)
+//JC speed this up
+#define XY_PROBE_SPEED (175*60)
 
 // Feedrate (mm/min) for the first approach when double-probing (MULTIPLE_PROBING == 2)
 #define Z_PROBE_SPEED_FAST (6*60)
@@ -1529,16 +1531,19 @@
 #endif
 
 #if ENABLED(Z_SAFE_HOMING)
-  #define Z_SAFE_HOMING_X_POINT X_CENTER  // X point for Z homing
-  #define Z_SAFE_HOMING_Y_POINT Y_CENTER  // Y point for Z homing
+  //#define Z_SAFE_HOMING_X_POINT X_CENTER  // X point for Z homing
+  //#define Z_SAFE_HOMING_Y_POINT Y_CENTER  // Y point for Z homing
+  //JC move to corer a bit to save some time
+  #define Z_SAFE_HOMING_X_POINT 100  // X point for Z homing
+  #define Z_SAFE_HOMING_Y_POINT 100  // Y point for Z homing
 #endif
 
 
 // Homing speeds (mm/min)
 //#define HOMING_FEEDRATE_MM_M { (50*60), (50*60), (6*60) }
 
-//JC update 20*60 on Z
-#define HOMING_FEEDRATE_MM_M { (50*60), (50*60), (20*60) }
+//JC update 15*60 on Z
+#define HOMING_FEEDRATE_MM_M { (50*60), (50*60), (15*60) }
 
 // Validate that endstops are triggered on homing moves
 #define VALIDATE_HOMING_ENDSTOPS
